@@ -24,16 +24,31 @@ int main() {
 
                 case 'a': {
                 double cm;
+                do {
                 printf("\nPodaj cm:\n");
                 scanf("%lf", &cm);
+
+                if(cm<0) {
+                    printf("Blad. Podales ujemna wartosc. sprobuj jeszcze raz\n");
+                }
+
+                } while (cm < 0);
+        
                 printf("Wynik to: %.2f cm = %.2f m\n", cm, cm / 100);
                 break;
                 }
 
                 case 'b': {
                     double m;
+                    do {
                     printf("\nPodaj m:\n");
                     scanf("%lf", &m);
+
+                    if (m < 0) {
+                        printf("Blad. Podales ujemna wartosc. sprobuj jeszcze raz\n");
+                    }
+
+                    } while (m < 0);
                     printf("Wynik to: %.2f m = %.2f km\n", m, m / 1000);
                     break;
                 }
@@ -42,17 +57,33 @@ int main() {
         }
             break;
 
-            case 'b':
-            printf("\nPodaj wartosci mas a i b\n");
-            break;
+            case 'b': {
+                double g;
+                do {
+            printf("\nPodaj wartosc masy g\n");
+            scanf("%lf", &g);
 
-            case 'c':
-            printf("\nPodaj wartosci temperatur a i b\n");
-            break;
+            if (g < 0) {
+                printf("Blad. Podales ujemna wartosc. sprobuj jeszcze raz\n");
+            }
 
-            default:
+                } while (g < 0);
+            printf("Wynik to: %.2f g = %.2f kg\n", g, g * 0.001);
+            break;
+            }
+
+            case 'c': {
+                double C;
+            printf("\nPodaj wartosc temperatury w C\n");
+            scanf("%lf", &C);
+            printf("Wynik to: %.2f C = %.2f F\n", C, C * 1.8 + 32);
+            break;
+            }
+
+            default: {
             printf("\nBledny wybor w menu\n");
             break;
+            }
         }
 printf("\nChcesz kontynuowac? kliknij 'x'. Jesli nie kliknij dowolny inny znak\n");
 scanf(" %c", &kontynuuj);
